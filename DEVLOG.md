@@ -2127,4 +2127,318 @@ function ReviewRow({ label, value, hex }: { label: string; value: string; hex?: 
 
 ---
 
+---
+
+## 🗂️ ESTRUTURA DE PASTAS — MANTER EXATAMENTE ASSIM
+
+> **Instrução para Claude:** Esta seção define a estrutura canônica do projeto. Nunca mover, renomear ou reorganizar pastas sem instrução explícita do Felipe. Se uma pasta não existir, criá-la. Se algo extra aparecer, questionar antes de deletar.
+
+### Raiz do Workspace: `f:\Claude Code + Obsidian\`
+
+```
+f:\Claude Code + Obsidian\
+├── .claude\                        ← configurações do Claude Code (não tocar)
+├── Agência de IA\                  ← VAULT OBSIDIAN COMPLETO (ver abaixo)
+├── DEVLOG.md                       ← este arquivo — estado completo do projeto
+├── HANDOFF-OBSIDIAN-SETUP.md       ← instruções de setup para novo PC
+└── videoplayback.txt               ← arquivo de texto auxiliar
+```
+
+### Vault Obsidian: `f:\Claude Code + Obsidian\Agência de IA\`
+
+```
+Agência de IA\
+├── .claude\                        ← instruções específicas do vault para Claude
+├── .obsidian\                      ← configurações do Obsidian (não tocar)
+│
+├── ⚙️ Operações\                   ← SOPs, templates, processos internos
+│   ├── templates\
+│   │   ├── cliente.md
+│   │   ├── deal.md
+│   │   ├── influencer-persona.md
+│   │   ├── produto-afiliado.md
+│   │   ├── projeto.md
+│   │   ├── reuniao.md
+│   │   └── roteiro-video.md
+│   ├── SOP-criar-nova-influencer.md
+│   └── VAULT-SETUP-PROMPT.md
+│
+├── 🌍 Mercados\                    ← contexto fixo por país
+│   ├── brasil.md
+│   ├── reino-unido.md
+│   ├── alemanha.md
+│   ├── franca.md
+│   └── estados-unidos.md
+│
+├── 🎭 Influencers\                 ← uma pasta por persona, organizada por país
+├── 👤 Pessoas\                     ← contatos: fornecedores, parceiros, creators
+├── 👥 Clientes\                    ← fichas de clientes
+├── 💼 Projetos\                    ← projetos em andamento
+├── 📁 Arquivo\                     ← conteúdo arquivado / inativo
+│
+├── 📅 Diário\                      ← notas diárias (formato YYYY-MM-DD.md)
+│
+├── 📅 Scrum\                       ← GESTÃO DE PROJETOS (criado em 2026-05-18)
+│   ├── README.md                   ← visão geral + sprint atual
+│   ├── Backlog.md                  ← todas as tasks priorizadas
+│   ├── Epics.md                    ← objetivos macro
+│   ├── Times.md                    ← quem faz o quê (Felipe + Agentes)
+│   ├── Sprint-01.md                ← Setup de conta TikTok Shop
+│   ├── Sprint-02.md                ← Avatar + primeiro vídeo
+│   ├── Sprint-03.md                ← Postagem + otimização
+│   └── Sprint-04.md                ← Primeiras vendas + escala
+│
+├── 📊 Métricas\                    ← performance por mercado
+├── 📊 Reuniões\                    ← atas de reuniões
+├── 📚 Pesquisa\                    ← trends, ferramentas, concorrentes
+├── 📣 Conteúdo\                    ← roteiros e calendários por mercado
+├── 📥 Inbox\                       ← captura rápida, organizar depois
+├── 🤝 Deals\                       ← parcerias com marcas/fornecedores
+├── 🛍️ Produtos\                    ← produtos aprovados por mercado
+│
+├── .gitignore
+├── Bem-vindo.md
+└── CLAUDE.md                       ← contexto operacional da agência (LEIA PRIMEIRO)
+```
+
+### Regras de Manutenção
+
+1. **Emojis nas pastas são intencionais** — navegação visual no Obsidian. Manter exatamente.
+2. **`CLAUDE.md`** dentro do vault é o contexto principal — sempre lido primeiro.
+3. **`📅 Scrum\`** é a pasta de gestão ativa — atualizar sprint a cada semana.
+4. **Nunca criar pastas novas** sem questionar o Felipe.
+5. **`DEVLOG.md`** fica na raiz do workspace, nunca dentro do vault.
+6. **`.claude\` e `.obsidian\`** — nunca tocar.
+
+---
+
+## 📋 SESSÃO 2026-05-18 — TikTok Shop Scrum + Extensão Chrome
+
+### O que foi feito
+
+| # | O que | Onde |
+|---|-------|------|
+| 1 | Recriou extensão Chrome Video Downloader | `f:\content-creator\chrome-extension\` |
+| 2 | `downloader.py` com yt-dlp + cookies do Chrome | `f:\content-creator\downloader.py` |
+| 3 | `transcribe_course.py` processa subpastas em ordem | `f:\content-creator\transcribe_course.py` |
+| 4 | Transcreveu 22 aulas do curso (chave: `tiktokshop`) | `f:\content-creator\data\transcriptions.json` |
+| 5 | Criou Scrum completo no Obsidian (4 sprints + backlog + epics + times) | `Agência de IA\📅 Scrum\` |
+
+### Como adicionar novos módulos ao curso
+
+```bash
+cd f:\content-creator
+uv run python transcribe_course.py "C:\Users\User\Downloads\TikTokShop" tiktokshop
+# Vídeos já transcritos são pulados automaticamente
+```
+
+### Extensão Chrome (Video Downloader)
+
+- Instalar: `chrome://extensions` → "Carregar sem compactação" → `f:\content-creator\chrome-extension\`
+- Servidor HLS: `python f:\content-creator\downloader.py` (porta 8001)
+- yt-dlp usa cookies do Chrome automaticamente (`--cookies-from-browser chrome`)
+- Downloads MP4 diretos: abre diálogo "Salvar como" nativo (`saveAs: true`)
+
+---
+
 *Este documento foi gerado automaticamente pelo script `update-devlog.ps1`*
+
+
+---
+
+## ARVORE CANONICA DO PROJETO — MANTER EXATAMENTE ASSIM
+> Atualizado em 2026-05-18. Esta e a fonte da verdade para qualquer Claude que abrir este workspace.
+
+### Workspace Raiz: `f:\Claude Code + Obsidian\`
+
+```
+Claude Code + Obsidian\
+├── .claude\                        <- memoria persistente do Claude (nao tocar)
+├── Agencia de IA\                  <- vault Obsidian da empresa Boson Agents
+├── DEVLOG.md                       <- este arquivo (raiz do workspace, nunca dentro do vault)
+├── HANDOFF-OBSIDIAN-SETUP.md       <- instrucoes de setup para novo PC
+└── videoplayback.txt               <- arquivo temporario, pode ignorar
+```
+
+### Vault Obsidian: `f:\Claude Code + Obsidian\Agencia de IA\`
+
+```
+Agencia de IA\
+├── .claude\                        <- instrucoes especificas do vault para Claude
+├── .obsidian\                      <- configuracoes Obsidian (NUNCA TOCAR)
+├── ⚙️ Operacoes\                   <- SOPs, templates, processos internos
+│   ├── templates\
+│   │   ├── SOP-criar-nova-influencer.md
+│   │   ├── VAULT-SETUP-PROMPT.md
+│   │   ├── cliente.md
+│   │   ├── deal.md
+│   │   ├── influencer-persona.md
+│   │   ├── produto-afiliado.md
+│   │   ├── projeto.md
+│   │   ├── reuniao.md
+│   │   └── roteiro-video.md
+│   ├── SOP-criar-nova-influencer.md
+│   └── VAULT-SETUP-PROMPT.md
+├── 🌍 Mercados\                    <- contexto fixo por pais
+├── 🎭 Influencers\                 <- uma pasta por persona, organizada por pais
+├── 👤 Pessoas\                     <- contatos: fornecedores, parceiros, creators
+├── 👥 Clientes\                    <- fichas de clientes da agencia
+├── 💼 Projetos\                    <- projetos em andamento
+├── 📁 Arquivo\                     <- conteudo arquivado / inativo
+├── 📅 Diario\                      <- notas diarias (formato YYYY-MM-DD.md)
+├── 📅 Scrum\                       <- GESTAO ATIVA DE PROJETOS
+│   ├── README.md
+│   ├── Backlog.md
+│   ├── Epics.md
+│   ├── Times.md
+│   ├── Sprint-01.md
+│   ├── Sprint-02.md
+│   ├── Sprint-03.md
+│   └── Sprint-04.md
+├── 📊 Metricas\
+├── 📊 Reunioes\
+├── 📚 Pesquisa\
+├── 📣 Conteudo\
+├── 📥 Inbox\
+├── 🤝 Deals\
+├── 🛍️ Produtos\
+├── Clippings\
+├── .gitignore
+├── Bem-vindo.md
+└── CLAUDE.md                       <- LEIA PRIMEIRO
+```
+
+### Regras de Manutencao (nao negociaveis)
+1. Emojis nas pastas sao intencionais — manter exatamente
+2. CLAUDE.md dentro do vault e o contexto principal — sempre lido primeiro
+3. Scrum\ e a pasta de gestao ativa — atualizar sprint a cada semana
+4. Nunca criar pastas novas sem perguntar para o Felipe
+5. DEVLOG.md fica na raiz do workspace, nunca dentro do vault
+6. .claude\ e .obsidian\ — nunca tocar nem recriar
+
+---
+
+## VISAO EMPRESARIAL — Boson Agents
+> Consolidado em 2026-05-18 apos analise de 38 aulas do curso "Codigo do Produto Viral" (Jessica).
+
+### Cronograma
+| Semana | Meta | Responsavel |
+|--------|------|-------------|
+| Semana 1 | Conta criada, aquecida (100 views), TikTok Shop ativo, produto escolhido | Felipe |
+| Semana 2 | Avatar criado, primeiro video gerado e postado | Felipe + Claude + Factory |
+| Semana 3 | Lote de videos, 1-2/dia, metricas monitoradas | Claude + Factory + Felipe |
+| Semana 4 | Video vencedor identificado, replicacao iniciada | Felipe + Claude |
+
+### Regras de Ouro (38 aulas)
+- Copie o que funciona, nunca crie do zero
+- Replique, replique, replique — ao acertar, escalar indefinidamente
+- Voce nao precisa aparecer — 100% IA
+- Venda sem parecer que esta vendendo — indicacao de amiga, nao propaganda
+- Hook e 80/20 do video — 3 segundos decidem tudo
+- USA e sempre a referencia — o que valida nos EUA funciona em qualquer pais
+- Conta desaquecida nao e conta banida — reconhecer e reativar
+- ChatGPT e substituido por Claude Agente em todas as etapas de texto
+
+---
+
+## ESTRUTURA DE AGENTES PM — Boson Agents
+
+```
+CEO: Felipe (humano)
+├── VP Estrategia: Claude
+├── Dept. Crescimento de Conta    [PM: Claude-Growth]
+│   └── Felipe executa (VPN, conta, aquecimento)
+├── Dept. Produto e Pesquisa      [PM: Claude-Product]
+│   └── Claude + Felipe (curadoria, DNA Viral, CaloData)
+├── Dept. Producao de Conteudo    [PM: Claude-Content]
+│   └── ugc-factory (Brown/Trinity/Oracle/Tank)
+└── Dept. Escala e Metricas       [PM: Claude-Scale]
+    └── Felipe + Claude (monitorar, replicar)
+```
+
+### Como ativar agentes PM (sessao Claude Code no vault):
+- "[Claude-Growth] Revisar Sprint-01 — tasks atrasadas?"
+- "[Claude-Product] Analisar vitrine UK — top 3 produtos"
+- "[Claude-Content] Gerar lote 5 roteiros, avatar UK, produto: X"
+- "[Claude-Scale] Resumo performance semana — o que replicar?"
+
+---
+
+## PRODUTO — DNA Viral como Aba do InfluencerOS
+
+- Localizacao: nova aba no sidebar do InfluencerOS
+- Funcao: usuario cola URL de produto TikTok Shop → agente analisa potencial viral
+- Transcricao automatica: content-creator fara isto como feature de assinatura (premium)
+- Backend: novo agente dna_viral.py em ugc-factory + endpoint POST /analyze-product
+- Vitrine de Produtos Virais: modulo bonus com PDF + video — tambem candidato a aba no InfluencerOS
+
+---
+
+## SESSAO 2026-05-18 (continuacao) — Analise Empresarial
+
+### Status das transcricoes
+| Modulo | Aulas | Status |
+|--------|-------|--------|
+| 1. 72 horas | 3 | OK |
+| 2. O Poder do TikTok Shop | 4 | OK |
+| 3. Criacao e Aquecimento | 2 | OK |
+| 4. Crescimento Global | 8 | OK |
+| 5. Copywriting | 7 | OK |
+| 6. Videos que Vendem | 8 | OK |
+| 7. Escala e Otimizacao | 7 | OK |
+| DNA Viral — A Formula da Escala | 2 | OK |
+| 9. Vitrine de Produtos Virais | 1 | OK |
+
+### Comando para transcrever novos modulos
+```
+cd F:\content-creator
+uv run python transcribe_course.py "C:\Users\User\Downloads\TikTokShop" tiktokshop
+```
+
+### Mudancas aplicadas nesta sessao
+- Sprint-02.md reescrito com workflow real (5 blocos: Mineracao, Avatar, Mockup, Roteiro, Edicao)
+- Backlog.md expandido com 18 tasks novas para Sprint 2
+- DEVLOG.md atualizado com arvore canonica + visao empresarial + estrutura PM
+- background.js corrigido: removido .ts (segmentos HLS), dedup por m3u8
+- popup.html/js: botao browse, indicador servidor online/offline, downloader.bat
+
+
+
+---
+
+## SESSAO 2026-05-18 (parte 2) — Estrutura Scrum + DNA Viral
+
+### O que foi feito
+- **Times.md** reescrito com organograma completo: CEO Felipe → VP Claude → 4 PMs (Growth/Product/Content/Scale)
+- **Sprint-04.md** reescrito com conteudo real do modulo 7 (Escala e Otimizacao de Vendas)
+  - BLOCO 1: Analise de performance (KPI = cliques, nao views)
+  - BLOCO 2: Replicacao do video vencedor (10-20 videos no formato que funcionou)
+  - BLOCO 3: Expansao para produto 2 + 3a conta em novo pais
+  - BLOCO 4: Estrutura financeira (Wise CPF, Payoneer, documentacao saque)
+- **DNA-Viral.md** criado em Pesquisa/
+  - Spec completa do feature como aba premium do InfluencerOS
+  - Prompt base para dna_viral.py
+  - Campos: product_name, target_audience, problems, benefits, price, extra_info
+  - Output: 5 hooks virais, 3 angulos de video, persona ultra-especifica, 2 CTAs invisiveis
+  - Roadmap: dna_viral.py → endpoint POST /analyze-product → aba DNA no sidebar
+- **DEVLOG.md** atualizado com arvore canonica + visao empresarial completa
+- **.gitignore** criado na raiz do workspace
+
+### Transcricoes concluidas — status final
+Total: 41 transcricoes em 9 modulos/bonus do curso TikTokShop
+Todos os modulos estao em: F:\content-creator\data\transcriptions.json (chave: "tiktokshop")
+
+### Pendencias para o outro PC
+1. Implementar DNA Viral agent: f:\ugc-factory\src\agents\dna_viral.py
+2. Adicionar endpoint POST /analyze-product em f:\ugc-factory\src\api\routes.py
+3. Criar aba DNA no sidebar do f:\influenceros
+4. Corrigir bug Kontext (plano em C:\Users\User\.claude\plans\vamos-retomar-o-projeto-crystalline-stearns.md)
+   - route.ts: genMode="kontext" → use_kontext=true
+   - routes.py: branch use_kontext → generate_image_kontext()
+   - page.tsx: prompt simplificado + label corrigido
+5. Dashboard dinamico monitorando Boson Agents + zx control
+   - Referencia: D:\Cloud\Varixx-DevMecanico\Vibe Design
+
+### Setup no outro PC
+Ver HANDOFF-OBSIDIAN-SETUP.md na raiz do workspace.
+

@@ -1,0 +1,18 @@
+# Vault Obsidian tem repo próprio (boson-agents-vault)
+Agência de IA/
+
+# Configurações locais do Claude (não portáveis)
+.claude/
+
+# Arquivo temporário
+videoplayback.txt
+
+# Obsidian cache local (já no .gitignore do vault)
+Agência de IA/.obsidian/workspace.json
+Agência de IA/.obsidian/workspace-mobile.json
+Agência de IA/.obsidian/cache
+
+# Windows
+Thumbs.db
+desktop.ini
+*.tmp
