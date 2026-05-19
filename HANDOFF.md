@@ -1,5 +1,5 @@
 # HANDOFF — Boson Agents / UGC Factory
-**Data:** 2026-05-19  
+**Última atualização:** 2026-05-19  
 **Sprint atual:** Sprint 01 — Setup Completo (semana 1)
 
 ---
@@ -12,14 +12,15 @@ Leia os seguintes arquivos nesta ordem e confirme que leu cada um:
 1. f:\Claude Code + Obsidian\CLAUDE.md
 2. f:\Claude Code + Obsidian\Agência de IA\CLAUDE.md
 3. f:\Claude Code + Obsidian\Agência de IA\📅 Scrum\Sprint-01.md
-4. f:\Claude Code + Obsidian\Agência de IA\📅 Scrum\Backlog.md
+4. f:\Claude Code + Obsidian\Agência de IA\📅 Scrum\Times.md
+5. f:\Claude Code + Obsidian\Agência de IA\📅 Scrum\Backlog.md
 
 Após ler, me diga:
-- Qual é o projeto
+- Qual é o projeto e quais times existem
 - Quais são as tasks da Sprint 01
 - Quais são as pendências técnicas no backlog
 
-Estou no PC novo. Vamos começar a Sprint 01.
+Estou continuando a Sprint 01. Vamos trabalhar.
 ```
 
 ---
@@ -60,91 +61,7 @@ Cole o prompt do **PASSO 0** para dar contexto completo ao Claude.
 
 ---
 
-## PASSO 2 — Resultado esperado nas árvores
-
-### VS Code (raiz: `f:\Claude Code + Obsidian\`)
-```
-CLAUDE CODE + OBSIDIAN
-├── .claude\
-├── Agência de IA\                ← vault Obsidian
-│   ├── .claude\
-│   ├── .obsidian\
-│   ├── ⚙️ Operações\
-│   │   ├── templates\
-│   │   ├── SOP-criar-nova-influencer.md
-│   │   └── VAULT-SETUP-PROMPT.md
-│   ├── 🌍 Mercados\
-│   ├── 🎭 Influencers\
-│   ├── 👤 Pessoas\
-│   ├── 👥 Clientes\
-│   ├── 💼 Projetos\
-│   ├── 📁 Arquivo\
-│   ├── 📅 Diário\
-│   ├── 📅 Scrum\
-│   │   ├── Backlog.md
-│   │   ├── Epics.md
-│   │   ├── README.md
-│   │   ├── Sprint-01.md   ← sprint atual
-│   │   ├── Sprint-02.md
-│   │   ├── Sprint-03.md
-│   │   ├── Sprint-04.md
-│   │   └── Times.md
-│   ├── 📊 Métricas\
-│   ├── 📊 Reuniões\
-│   ├── 📚 Pesquisa\
-│   │   └── DNA-Viral.md
-│   ├── 📣 Conteúdo\
-│   ├── 📥 Inbox\
-│   ├── 🤝 Deals\
-│   ├── 🛍️ Produtos\
-│   ├── Clippings\         ← 24 clippings do curso Phase 1 e 2
-│   ├── .gitignore
-│   ├── Bem-vindo.md
-│   └── CLAUDE.md          ← contexto principal
-├── .gitignore
-├── CLAUDE.md              ← ponto de entrada para o Claude
-├── DEVLOG.md
-├── HANDOFF.md             ← este arquivo
-├── HANDOFF-OBSIDIAN-SETUP.md
-└── videoplayback.txt
-```
-
-### Obsidian (vault: `f:\Claude Code + Obsidian\Agência de IA\`)
-```
-Agência de IA
-├── ⚙️ Operações
-├── 🌍 Mercados
-├── 🎭 Influencers
-├── 👤 Pessoas
-├── 👥 Clientes
-├── 💼 Projetos
-├── 📁 Arquivo
-├── 📅 Diário
-├── 📅 Scrum
-│   ├── Backlog
-│   ├── Epics
-│   ├── README
-│   ├── Sprint-01   ← sprint atual
-│   ├── Sprint-02
-│   ├── Sprint-03
-│   ├── Sprint-04
-│   └── Times
-├── 📊 Métricas
-├── 📊 Reuniões
-├── 📚 Pesquisa
-│   └── DNA-Viral
-├── 📣 Conteúdo
-├── 📥 Inbox
-├── 🤝 Deals
-├── 🛍️ Produtos
-├── Clippings
-├── Bem-vindo
-└── CLAUDE
-```
-
----
-
-## PASSO 3 — Sincronizar (quando vindo do PC original)
+## PASSO 2 — Sincronizar (quando vindo do PC original)
 
 ```powershell
 cd "f:\Claude Code + Obsidian"                   ; git pull origin master
@@ -153,6 +70,74 @@ cd "f:\ugc-factory"                              ; git pull origin main
 cd "f:\influenceros"                             ; git pull
 cd "f:\content-creator"                          ; git pull
 ```
+
+---
+
+## O que foi feito até aqui (sessão 2026-05-19)
+
+### Skills Python — `f:\ugc-factory\src\skills\`
+
+8 novos arquivos de skill criados (stubs com NotImplementedError, aguardando clippings do curso):
+
+| Arquivo | Phase | Prioridade |
+|---------|-------|-----------|
+| `animate.py` | Phase 3 | Normal |
+| `add_audio.py` | Phase 4 | Normal |
+| `edit_video.py` | Phase 4 | Normal |
+| `create_influencer_identity.py` | Phase 5 | Normal |
+| `generate_ugc_video.py` | **Phase 6** | ⚡ PRIORITÁRIA |
+| `generate_caption.py` | Phase 7 | Normal |
+| `generate_script.py` | Phase 8 | Normal |
+| `clone_influencer.py` | **Phase 9** | ⚡ PRIORITÁRIA |
+
+`__init__.py` atualizado com mapa completo Phase→Skill.
+
+### Times PM — `f:\Claude Code + Obsidian\Agência de IA\📅 Scrum\Times.md`
+
+13 agentes PM no organograma (4 existentes + 9 novos):
+
+**Pesquisa de Produto:**
+- `Claude-DNA` — análise DNA Viral (produto → hooks + persona + CTAs)
+- `Claude-Copy` — copywriting Módulo 5 (hooks 3s, CTAs invisíveis)
+
+**Produção AI:**
+- `Claude-Video` — Phase 3 animação
+- `Claude-Edit` — Phase 4 edição + áudio
+- `Claude-Identity` — Phase 5 identidade de influencer
+- `Claude-UGC` ⚡ — Phase 6 pipeline UGC ponta-a-ponta
+
+**Conteúdo & Social:**
+- `Claude-Script` — Phase 8 roteiros (NUNCA ChatGPT)
+- `Claude-Social` — Phase 7 conteúdo social + calendário
+
+**Escala:**
+- `Claude-Clone` ⚡ — Phase 9 clone digital + automação 24/7
+
+### InfluencerOS Sidebar — `f:\influenceros\`
+
+3 novas seções adicionadas + 8 páginas placeholder criadas:
+
+| Seção | Rota | Time |
+|-------|------|------|
+| Pesquisa de Produto | `/dna-viral` | Claude-DNA |
+| Pesquisa de Produto | `/copywriting` | Claude-Copy |
+| Pesquisa de Produto | `/vitrine` | Claude-Product |
+| Produção AI | `/scripts` | Claude-Script |
+| Produção AI | `/videos` | Claude-Video + Claude-UGC |
+| Produção AI | `/identidades` | Claude-Identity |
+| Escala | `/social` | Claude-Social |
+| Escala | `/clone` | Claude-Clone |
+
+### Fichas de Produto — `f:\Claude Code + Obsidian\Agência de IA\🛍️ Produtos\`
+
+20 fichas criadas (DNA Viral ainda vazio — rodar `[Claude-DNA]` em cada uma):
+
+- **🇬🇧 UK (7):** `adjustable-posture-corrector.md` ⭐31k vendas PRIORIDADE, dr-dent, arabiyat, halara, wellgard, womens-quick-dry, womens-deep
+- **🇩🇪 DE (6):** `organizador-geladeira.md` ⭐50k vendas PRIORIDADE, vegetable-chopper 38k, faixa-modeladora 19k, magnesium-complex, peel-stick-marble, denim-v-neck
+- **🇫🇷 FR (6):** collagene-marin, windboss-gommes-shilajit, complexe-magnesium-nutribrain, nuclever-cortisol-manager, plus-the-cheek, mens-watch-perfume-set
+- **🇧🇷 BR (1):** kit-2-calca-legging
+
+Template base: `⚙️ Operações/templates/ficha-produto.md`
 
 ---
 
@@ -178,10 +163,11 @@ cd "f:\content-creator"                          ; git pull
 
 | Task | Prioridade |
 |------|-----------|
-| DNA Viral Agent — `POST /analyze-product` | Alta |
-| Bug Kontext — `genMode="kontext"` chama PuLID | Média |
-| Vitrine PDF → `🛍️ Produtos/` por mercado | Baixa |
-| Skill `create_influencer_identity()` | Futura |
+| DNA Viral Agent — `dna_viral.py` + `POST /analyze-product` + tab "/dna-viral" no InfluencerOS | **Alta** |
+| Bug Kontext — `genMode="kontext"` chama PuLID em vez de `generate_image_kontext()` | Média |
+| Preencher DNA Viral das 20 fichas de produto com `[Claude-DNA]` | Média |
+| Implementar skills Phase 6 + 9 (`generate_ugc_video.py`, `clone_influencer.py`) | Alta |
+| Implementar skills Phase 3-5, 7-8 (stubs aguardando clippings) | Baixa |
 
 **Arquivo completo:** `f:\Claude Code + Obsidian\Agência de IA\📅 Scrum\Backlog.md`
 
@@ -196,6 +182,7 @@ cd "f:\content-creator"                          ; git pull
 2. Claude gera roteiro — NUNCA ChatGPT em nenhuma etapa de texto
 3. Scrum é fonte de verdade — sempre consultar `Sprint-XX.md` antes de sugerir o que fazer
 4. Tudo = skill candidata — avaliar `src/skills/` antes de criar código
+5. Phases 6 e 9 são PRIORITÁRIAS — core do negócio Boson Agents
 
 **Repos GitHub (conta: luis-felipe-grin):**
 - `claude-code-obsidian-vault` → `f:\Claude Code + Obsidian`
